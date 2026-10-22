@@ -1,0 +1,239 @@
+[
+  {
+    "input": {
+      "task": "kruskal",
+      "n": 3,
+      "edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ]
+    },
+    "expected": {
+      "cost": 2,
+      "components": 1
+    },
+    "alternative_valid": {
+      "cost": 2,
+      "components": 1,
+      "edge_ids": [
+        0,
+        2
+      ]
+    },
+    "invalid_witness": {
+      "cost": 2,
+      "components": 1,
+      "edge_ids": [
+        0,
+        0
+      ]
+    },
+    "accepted_valid": true,
+    "rejected_invalid": true
+  },
+  {
+    "input": {
+      "task": "prim",
+      "n": 3,
+      "edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          1
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ]
+    },
+    "expected": {
+      "cost": 2,
+      "components": 1
+    },
+    "alternative_valid": {
+      "cost": 2,
+      "components": 1,
+      "edge_ids": [
+        1,
+        2
+      ]
+    },
+    "invalid_witness": {
+      "cost": 2,
+      "components": 1,
+      "edge_ids": [
+        1,
+        1
+      ]
+    },
+    "accepted_valid": true,
+    "rejected_invalid": true
+  },
+  {
+    "input": {
+      "task": "scc",
+      "n": 3,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "expected": {
+      "component": [
+        0,
+        0,
+        1
+      ]
+    },
+    "alternative_valid": {
+      "component": [
+        7,
+        7,
+        9
+      ],
+      "condensation": [
+        [
+          7,
+          9
+        ]
+      ]
+    },
+    "invalid_witness": {
+      "component": [
+        7,
+        7,
+        9
+      ],
+      "condensation": []
+    },
+    "accepted_valid": true,
+    "rejected_invalid": true
+  },
+  {
+    "input": {
+      "task": "topo",
+      "n": 3,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    "expected": {
+      "acyclic": true
+    },
+    "alternative_valid": {
+      "acyclic": true,
+      "order": [
+        1,
+        0,
+        2
+      ]
+    },
+    "invalid_witness": {
+      "acyclic": true,
+      "order": [
+        2,
+        1,
+        0
+      ]
+    },
+    "accepted_valid": true,
+    "rejected_invalid": true
+  },
+  {
+    "input": {
+      "task": "dag",
+      "n": 3,
+      "source": 0,
+      "edges": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          2,
+          2
+        ]
+      ]
+    },
+    "expected": {
+      "acyclic": true,
+      "distance": [
+        0,
+        1,
+        3
+      ]
+    },
+    "alternative_valid": {
+      "acyclic": true,
+      "distance": [
+        0,
+        1,
+        3
+      ],
+      "parent_edge": [
+        -1,
+        1,
+        2
+      ]
+    },
+    "invalid_witness": {
+      "acyclic": true,
+      "distance": [
+        0,
+        1,
+        3
+      ],
+      "parent_edge": [
+        -1,
+        2,
+        1
+      ]
+    },
+    "accepted_valid": true,
+    "rejected_invalid": true
+  }
+]

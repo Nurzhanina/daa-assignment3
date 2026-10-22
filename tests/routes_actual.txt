@@ -1,0 +1,5 @@
+target=3 route=[0, 1, 2, 3] edge_ids=[4, 2, 3] cost=0
+target=0 route=[0] edge_ids=[] cost=0
+target=4 route=[] edge_ids=[] cost=unreachable
+target=1 route=[0, 1] edge_ids=[4] cost=3
+parent_edge=[-1, 4, 2, 3, -1]

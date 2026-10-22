@@ -1,0 +1,10 @@
+runtime=25.0.1+8-27
+os=Windows 11 10.0 amd64
+processors=12
+timer=System.nanoTime; milliseconds; seed=2515+n
+n=1000 m=4000 kruskal samples_ms=[1.727, 1.5058, 1.4712] median_ms=1.505800 cost=-714590111777
+n=1000 m=4000 prim samples_ms=[2.8194, 1.9369, 2.192] median_ms=2.192000 cost=-714590111777
+n=10000 m=40000 kruskal samples_ms=[46.6056, 14.3944, 14.1098] median_ms=14.394400 cost=-7139826933422
+n=10000 m=40000 prim samples_ms=[42.2129, 29.7276, 31.6111] median_ms=31.611100 cost=-7139826933422
+n=100000 m=250000 kruskal samples_ms=[226.8434, 241.5726, 237.2116] median_ms=237.211600 cost=-54671134988764
+n=100000 m=250000 prim samples_ms=[682.3184, 684.8816, 667.7707] median_ms=682.318400 cost=-54671134988764

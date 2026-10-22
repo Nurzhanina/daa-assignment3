@@ -1,0 +1,3 @@
+PASS 924 small/mixed requests against independent oracles (0.143s process time)
+PASS 5 alternative valid answers and 5 invalid witnesses
+PASS 9 full/deep cases; n=100000, up to 250000 rows (1.416s process time)

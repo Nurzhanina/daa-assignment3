@@ -1,11 +1,10 @@
-# Your tests / Ваши тесты
+# Own tests
 
-Create your own JSON Lines inputs here, together with expected and actual outputs and an explanation of each test. Run a file from the repository root:
+Run commands from the repository root; see ANALYSIS.md for build instructions.
 
-```sh
-python tools/run.py --input tests/my_cases.jsonl
-```
+- `python tests/verify.py`: generates and runs small and scale JSON Lines files, compares against independent expected specifications, and records complete actual outputs.
+- `java -Xmx384m -cp .build/Java GraphChecks`: calls the route helper and verifies direction and costs.
+- `java -Xmx384m -cp .build/Java GraphChecks benchmark`: generates fixed-seed graphs, validates forests, warms up and records three timings per method at three sizes.
+- `python tools/run.py --setup` and `python tools/run.py --check`: official transport and public checks.
 
-Create `my_cases.jsonl` before running this example command. The launcher prints actual results; compare them with independently justified expected answers. Your files are not discovered automatically. Call your route helper directly in your test code. See the root README for all requirements.
-
-Создайте здесь свои входы JSON Lines, ожидаемые и фактические результаты и объяснения тестов. Команда выше запускает созданный вами файл, но не сравнивает ответы автоматически. Функцию восстановления пути вызывайте непосредственно из своего тестового кода. Полные требования приведены в README в корне репозитория.
+The small_* and scale_* files contain requests, expected specifications and actual results. Non-unique answers use the semantic validator, not byte equality. Expected specifications supply independently derived values/partitions; valid arbitrary witnesses need not equal another run's witness. verify.py regenerates all inputs from seed 2515 or the documented chain formulas. witness_checks.json stores alternative valid and invalid witness examples and their check outcomes. own_results.txt, routes_actual.txt, benchmark_actual.txt and public_actual.txt record executed checks. Full explanations and mathematical justifications are in ANALYSIS.md.
